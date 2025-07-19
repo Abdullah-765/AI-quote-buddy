@@ -120,7 +120,7 @@ export default function QuoteGenerator() {
               <>
                 <div className="bg-gradient-to-r from-accent/50 to-accent/30 p-6 rounded-lg border border-border/30">
                   <p className="text-lg text-center italic leading-relaxed">
-                    "{quote}"
+                    &quot;{quote}&quot;
                   </p>
                 </div>
                 <Button
