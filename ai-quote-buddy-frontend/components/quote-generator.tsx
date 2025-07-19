@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "./ui/input";
 import { Loader2, MessageSquare, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Textarea } from "./ui/textarea";
@@ -9,9 +8,7 @@ import { Textarea } from "./ui/textarea";
 export default function QuoteGenerator() {
   const [input, setInput] = useState("");
   const [quote, setQuote] = useState("");
-  const [mood, setMood] = useState("");
-  const [moodColor, setMoodColor] = useState("")
-  const [explanation, setExplanation] = useState("")
+    const [explanation, setExplanation] = useState("")
     const [isGenerating, setIsGenerating] = useState(false);
   const [isExplaining, setIsExplaining] = useState(false);
   const [showExplanation, setShowExplanation] = useState(false)
@@ -31,7 +28,6 @@ export default function QuoteGenerator() {
   e.preventDefault();
    setIsGenerating(true)
   setQuote(""); // Optional: reset previous quote
-  setMood("");
   setExplanation("");
   setShowExplanation(false);
 
@@ -50,9 +46,7 @@ export default function QuoteGenerator() {
 
     const data = await response.json();
     setQuote(data.quote);
-    setMood(data.mood);
     setExplanation(data.explanation)
-    setMoodColor(data.color)
   } catch (error) {
     console.error("Error fetching quote:", error);
     setQuote("Sorry, something went wrong.");
