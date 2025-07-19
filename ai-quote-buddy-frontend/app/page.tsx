@@ -1,89 +1,6 @@
-// "use client";
-// import { useState } from "react";
-// import { Textarea } from "@/components/ui/textarea"
-// import { Button } from "@/components/ui/button";
-// import { ModeToggle } from "@/components/toggle-theme";
-// import Loader from "@/components/loader";
-
-// export default function Home() {
-//   const [input, setInput] = useState("");
-//   const [quote, setQuote] = useState("");
-//   const [mood, setMood] = useState("");
-//   const [loading, setLoading] = useState(false);
-//   const [explanation, setExplanation] = useState("")
-//   const [showHide, setShowHide] = useState(0)
-//   const [text, setText] = useState("Show Explanation")
-
-//   function showHideExplanation(){
-//     if (showHide == 1 && text == "Hide Explanation"){
-//       setShowHide(0)
-//       setText("Show Explanation")
-//     }
-//     else{
-//       setShowHide(1)
-//       setText("Hide Explanation")
-//     }
-//   }
-
-//   async function handleSubmit(e: React.FormEvent) {
-//   e.preventDefault();
-//   setLoading(true);
-//   setQuote(""); // Optional: reset previous quote
-//   setMood("");
-//   setExplanation("");
-
-//   try {
-//     const response = await fetch("http://localhost:8000/generate-quote", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ message: input }),
-//     });
-
-//     if (!response.ok) {
-//       throw new Error("Something went wrong");
-//     }
-
-//     const data = await response.json();
-//     setQuote(data.quote);
-//     setMood(data.mood);
-//     setExplanation(data.explanation)
-//   } catch (error) {
-//     console.error("Error fetching quote:", error);
-//     setQuote("Sorry, something went wrong.");
-//   } finally {
-//     setLoading(false);
-//   }
-// }
-  
-//   return (
-//     <div>
-//       <ModeToggle/>
-//       <form onSubmit={handleSubmit}>
-//         <Textarea
-//           placeholder="what are you feeling?"
-//           value={input}
-//           onChange={(e) => setInput(e.target.value)}
-//         />
-//         <button type="submit">Submit</button>
-//       </form>
- 
-//       <h1>{quote}</h1>
-//       <h1>{mood}</h1>
-//       <Button onClick={() => showHideExplanation()}>{text}</Button>
-//       {showHide == 1 &&
-//               <h1>explanation:{explanation}</h1>
-//       }
-
-//     </div>
-//   );
-// }
-
 import QuoteGenerator from "@/components/quote-generator";
 import { ModeToggle } from "@/components/toggle-theme";
 import Link from "next/link";
-import Image from "next/image";
 import Logo from "@/components/logo";
 export default function App() {
   return (
@@ -92,13 +9,7 @@ export default function App() {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/20">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            {/* <div className="h-8 w-8 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold">Q</span>
-            </div> */}
             <Logo/>
-            {/* <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-              AI Quote Buddy
-            </h1> */}
           </div>
           <ModeToggle/>
         </div>
