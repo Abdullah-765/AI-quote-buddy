@@ -32,7 +32,7 @@ export default function QuoteGenerator() {
   setShowExplanation(false);
 
   try {
-    const response = await fetch("http://localhost:8000/generate-quote", {
+    const response = await fetch("https://ai-quote-buddy-production.up.railway.app/generate-quote", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
