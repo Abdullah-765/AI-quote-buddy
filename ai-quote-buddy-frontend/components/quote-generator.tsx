@@ -32,7 +32,7 @@ export default function QuoteGenerator() {
   setShowExplanation(false);
 
   try {
-    const response = await fetch("https://ai-quote-buddy-production.up.railway.app/generate-quote", {
+    const response = await fetch("https://medical-frannie-blueblossom-dd03524f.koyeb.app/generate-quote", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
