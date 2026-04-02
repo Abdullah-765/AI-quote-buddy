@@ -32,7 +32,7 @@ export default function QuoteGenerator() {
   setShowExplanation(false);
 
   try {
-    const response = await fetch("https://medical-frannie-blueblossom-dd03524f.koyeb.app/generate-quote", {
+    const response = await fetch("https://medical-frannie-blueblossom-dd03524f.koyeb.app/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
